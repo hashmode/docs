@@ -69,7 +69,28 @@ Using a Debian distribution
 
 First, make sure the **bash-completion** library is installed.
 Create a file named **cake** in **/etc/bash_completion.d/** and put the
-following content inside it::
+:ref:`bash-completion-file-content` inside it.
+
+Save the file, then restart your console.
+
+Using Mac OS X
+--------------
+
+First, make sure the **bash-completion** library is installed.
+You can install it using **homebrew** with the command
+``brew install bash-completion``.
+Create a file named **cake** in **/usr/local/etc/bash_completion.d/** and put
+the :ref:`bash-completion-file-content` inside it.
+
+Save the file, then restart your console.
+
+.. _bash-completion-file-content:
+
+Bash Completion file content
+----------------------------
+
+This is the code you need to put inside the **cake** file in the correct location
+in order to get autocompletion when using the CakePHP console::
 
     #
     # Bash completion file for CakePHP console
@@ -123,7 +144,6 @@ following content inside it::
 
     complete -F _cake cake bin/cake
 
-Save the file, then restart your console.
 
 Using autocompletion
 ====================
@@ -132,13 +152,19 @@ Once enabled, the autocompletion can be used the same way than for other
 built-in commands, using the **TAB** key.
 Three type of autocompletion are provided. The following output are from a fresh CakePHP install.
 
-#### Commands::
+Commands
+--------
+
+Sample output for commands autocompletion::
 
     $ bin/cake <tab>
     bake        i18n        orm_cache   routes
     console     migrations  plugin      server
 
-#### Subcommands::
+Subcommands
+-----------
+
+Sample output for subcommands autocompletion::
 
     $ bin/cake bake <tab>
     behavior            helper              shell
@@ -148,7 +174,10 @@ Three type of autocompletion are provided. The following output are from a fresh
     fixture             model
     form                plugin
 
-#### Options::
+Options
+-------
+
+Sample output for subcommands options autocompletion::
 
     $ bin/cake bake -<tab>
     -c            --everything  --force       --help        --plugin      -q            -t            -v

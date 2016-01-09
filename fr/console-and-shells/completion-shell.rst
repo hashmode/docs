@@ -62,7 +62,7 @@ Retourne::
 Vous pouvez passer un autre argument représentant une sous-commande du shell :
 cela vous retournera les options spécifiques à cette sous-commande.
 
-Activer l'autocompletion Bash pour la console CakePHP
+Activer l'autocomplétion Bash pour la console CakePHP
 =====================================================
 
 Avec une distribution Debian
@@ -70,7 +70,29 @@ Avec une distribution Debian
 
 Tout d'abord, assurez-vous que la librairie **bash-completion** est installée.
 Créez un fichier **cake** dans **/etc/bash_completion.d/** et placez-y le
-contenu suivant::
+:ref:`bash-completion-file-content`.
+
+Sauvegardez le fichier et rédémarrer la console.
+
+Avec Mac OS X
+-------------
+
+Tout d'abord, assurez-vous que la librairie **bash-completion** est installée.
+Vous pouvez l'installer en utilisant **homebrew** avec la commande suivante :
+``brew install bash-completion``.
+Créez un fichier **cake** dans **/etc/bash_completion.d/** et placez-y le
+:ref:`bash-completion-file-content`.
+
+Sauvegardez le fichier et rédémarrer la console.
+
+.. _bash-completion-file-content:
+
+Bash Completion file content
+----------------------------
+
+Voici le code que vous devez saisir dans le fichier **cake** (préalablement créé
+au bon emplacement pour bénéficier de l'autocomplétion quand vous utilisez la
+console CakePHP::
 
     #
     # Fichier de completion Bash pour la console CakePHP
@@ -124,8 +146,6 @@ contenu suivant::
 
     complete -F _cake cake bin/cake
 
-Sauvegardez le fichier et rédémarrer la console.
-
 Utilisez l'autocompletion
 =========================
 
@@ -134,13 +154,19 @@ pour les autres commandes natives du système, en utilisant la touche **TAB**.
 Trois types d'autocompletion sont fournis. Les examples de retour qui suivent
 proviennent d'une installation fraîche de CakePHP.
 
-#### Commandes::
+Commandes
+---------
+
+Exemple de rendu pour l'autocomplétion des commandes::
 
     $ bin/cake <tab>
     bake        i18n        orm_cache   routes
     console     migrations  plugin      server
 
-#### Subcommands::
+Sous-commandes
+--------------
+
+Exemple de rendu pour l'autocomplétion des sous-commandes::
 
     $ bin/cake bake <tab>
     behavior            helper              shell
@@ -150,7 +176,10 @@ proviennent d'une installation fraîche de CakePHP.
     fixture             model
     form                plugin
 
-#### Options::
+Options
+-------
+
+Exemple de rendu pour l'autocomplétion des options d'une sous-commande::
 
     $ bin/cake bake -<tab>
     -c            --everything  --force       --help        --plugin      -q            -t            -v

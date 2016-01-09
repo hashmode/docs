@@ -3,7 +3,7 @@ Code Generation with Bake
 
 Depending on how your computer is configured, you may have to set
 execute rights on the cake bash script to call it using ``bin/cake
-bake``. The cake console is run using the PHP CLI (command line
+bake``. The cake console is running using the PHP CLI (command line
 interface). If you have problems running the script, ensure that
 you have the PHP CLI installed and that it has the proper modules
 enabled (eg: MySQL, intl). Users also might have issues if the
